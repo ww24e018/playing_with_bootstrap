@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/bootstrap.bundle.js"></script>
+
+</head>
+<body>
+<div class="container">
+  <div class="row"><div class="col">
+    Trying example code from https://getbootstrap.com/docs/5.3/components/carousel/
+    <br/>
+    Including bootstrap is leaning on https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
+  </div></div>
+
+  <div class="row">
+    <div class="col">
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/carousel/la_2560.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/carousel/chic_2560.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/carousel/ny_2560.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+<script src="js/bootstrap.js"></script>
+<script>
+  const myCarouselElement = document.querySelector('#carouselExampleIndicators')
+
+  const carousel = new bootstrap.Carousel(myCarouselElement, {
+    interval: 2000,
+    touch: false
+  })
+</script>
+</body>
+</html>
