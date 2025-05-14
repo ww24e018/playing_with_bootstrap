@@ -19,12 +19,10 @@
         div#headertest{
             background-image: url("https://fastly.picsum.photos/id/251/1200/200.jpg?hmac=aWw47Fo46uyOBaqlMl9Y9AOvcArN2B5tt_EnxzRvdhc") ;
             background-size: cover;
-            color: #888 !important;
-            text-shadow:
-                    white 0.05em 0.05em 0.05em,
-                    black -0.05em -0.05em 0.05em
-                    !important
-            ;
+        }
+        div#headertest h1 {
+            -webkit-text-fill-color: #bbb;
+            -webkit-text-stroke: 0.05em #444;
         }
     </style>
 
@@ -39,13 +37,15 @@
     <div class="row">
         <div class="col-sm-12" id="headertest">
             <h1>Webseiten-Name-Und-So!</h1>
-            <div class="urltext">https://developer.mozilla.org/en-US/docs/Web/CSS/background-image</div>
-            <div class="urltext">https://developer.mozilla.org/en-US/docs/Web/CSS/background-size</div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12 col-lg-3">lore</div>
-        <div class="col-sm-12 col-lg-9">ipsum</div>
+        <div class="col-sm-12 col-lg-9">
+            <div class="urltext">https://developer.mozilla.org/en-US/docs/Web/CSS/background-image</div>
+            <div class="urltext">https://developer.mozilla.org/en-US/docs/Web/CSS/background-size</div>
+            <div class="urltext">https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-stroke</div>
+        </div>
     </div>
     <div class="row"></div>
 </div>
