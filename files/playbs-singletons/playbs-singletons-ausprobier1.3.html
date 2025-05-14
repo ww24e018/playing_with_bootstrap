@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hier könnte ihr Titletext stehen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+          crossorigin="anonymous">
+    <style>
+        /*<!-- css for testing stuff can go here -->*/
+        /* do div.doesnotexist to deactivate; should only work on direct subdivs of row */
+        div.row > div.doesnotexist {
+            border: 0.15rem solid lightgrey;
+            border-radius: 0.5rem;
+
+        }
+        div#headertest{
+            background-image: url("https://fastly.picsum.photos/id/251/1200/200.jpg?hmac=aWw47Fo46uyOBaqlMl9Y9AOvcArN2B5tt_EnxzRvdhc") ;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12" id="headertest">
+            <h1>Webseiten-Name-Und-So!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-lg-3">menu</div>
+        <div class="col-sm-12 col-lg-9">Hier sollen Karten stehen.
+            <div class="container-fluid">
+                <div class="row row-cols-sm-1 row-cols-md-3 g-4">
+                    <!-- hier kommen jetzt divs mit .col class (unspecced otherwise). I think? -->
+                    <div class="col-1">
+                        <div class="card h-100">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">Column</div>
+                    <div class="col-1">Column</div>
+                    <div class="col-1">Column</div>
+                    <div class="col-1">Column</div>
+                    <div class="col-1">Column</div>
+                    <div class="col-1">Column</div>
+                    <div class="col-1">Column</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">Für "links"
+            <div class="notalink">https://getbootstrap.com/docs/5.3/components/card/#grid-cards</div>
+            <div class="notalink">https://getbootstrap.com/docs/5.3/layout/grid/#row-columns</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
