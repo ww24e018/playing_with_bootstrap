@@ -17,6 +17,19 @@
 
         }
     </style>
+    <script>
+        window.onload = (event) => {
+            console.log("page is fully loaded");
+
+            var urltofetch = "http://localhost:7070/karteien";
+
+            window.fetch(urltofetch).then(function (response) {
+                console.log("the call go something fetched!");
+                console.log(response);
+            })
+
+        };
+    </script>
 
 </head>
 <body>
