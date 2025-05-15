@@ -22,6 +22,7 @@
             crossorigin="anonymous"></script>
 
     <script>
+        var myglobalvar_data = null;
         window.onload = (event) => {
             console.log("page is fully loaded");
 
@@ -36,6 +37,22 @@
             window.fetch(urltofetch)
                 .then((response) => response.json())
                 .then((data) => mychaindebugger(data))
+                .then((data) => {
+                    // hier kommt jetzt der handler code. und: return nicht vergessen?
+
+
+                    d3.select("div#container_log")
+                        .selectAll("div.row")
+                        .data(data)
+                        .enter()
+                        .append("div.row")
+                            .text(d => JSON.stringify(d))
+                    ;
+
+                    // cheating:
+                    myglobalvar_data = data;
+                    //return Promise.resolve(data);
+                })
             ;
 
 
