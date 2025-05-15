@@ -27,18 +27,16 @@
 
             var urltofetch = "http://localhost:7070/karteien";
 
-            window.fetch(urltofetch).then(async function(response) {
-                console.log("the call go something fetched!");
-                console.log(response);
+            var mychaindebugger = function(input) {
+                console.log(input);
+                return(input);
+            }
 
-                // do the json;
-                //if (response.)
-                console.log(await response.json());
-                // is this what the interface whants, for bubbling?
-                //return response;
-
-
-            });
+            // trying to grok: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+            window.fetch(urltofetch)
+                .then((response) => response.json())
+                .then((data) => mychaindebugger(data))
+            ;
 
 
         };
