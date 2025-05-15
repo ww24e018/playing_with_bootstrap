@@ -27,13 +27,19 @@
 
             var urltofetch = "http://localhost:7070/karteien";
 
-            window.fetch(urltofetch).then(function (response) {
+            var fetchsucesshandlerfunction = function(response) {
                 console.log("the call go something fetched!");
                 console.log(response);
 
                 // do the json;
+                //if (response.)
+                console.log(response.json());
+                // is this what the interface whants, for bubbling?
+                //return response;
 
-            });
+
+            };
+            window.fetch(urltofetch).then(fetchsucesshandlerfunction);
 
 
         };
