@@ -36,6 +36,14 @@
                 .then((response) => response.json())
                 .then((data) => mychaindebugger(data)) // die zeile und die funktion oben kann man weglassen, aber gut fuer debuging methinks.
                 .then((data) => {
+                    document.getElementById("row_fuer_kartei-bscards")
+                        .innerHTML=
+                            data.map((element) => {
+                                return `  <div class="col">
+                                        <kartei-component karteiid="${element}"></kartei-component>
+                                    </div>`;
+                            }).join("")
+                        ;
                     return data;
                 });
 
@@ -59,30 +67,7 @@
         <div class="col-sm-12 col-lg-9">ipsum testbed</div>
     </div>
     <div class="row">
-        <div class="col-12 col-sm-6 col-lg-2">
-            <kartei-component karteiid="15">
-                <div slot="kartei-name">Insert Name here</div>
-                <div slot="kartei-beschreibung">Insert Beschreibung here</div>
-            </kartei-component>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-2">
-            <kartei-component karteiid="16">
-                <div slot="kartei-name">Insert Name here</div>
-                <div slot="kartei-beschreibung">Insert Beschreibung here</div>
-            </kartei-component>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-2">
-            <kartei-component karteiid="17">
-                <div slot="kartei-name">Insert Name here</div>
-                <div slot="kartei-beschreibung">Insert Beschreibung here</div>
-            </kartei-component>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-2">
-            <kartei-component karteiid="18">
-                <div slot="kartei-name">Insert Name here</div>
-                <div slot="kartei-beschreibung">Insert Beschreibung here</div>
-            </kartei-component>
-        </div>
+        
 
     </div>
 </div>
@@ -90,13 +75,7 @@
     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4" id="row_fuer_kartei-bscards">
 
 
-        <div class="col">
-            <kartei-component karteiid="53"></kartei-component>
-        </div>
-        <div class="col">
-            <kartei-component karteiid="54"></kartei-component>
-        </div>
-
+        
 
 
     </div>

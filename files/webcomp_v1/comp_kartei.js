@@ -27,7 +27,36 @@ class KarteiComponent extends HTMLElement {
   connectedCallback() {
       this.shadowRoot.querySelector('img.card-img-top')
           .src = `https://picsum.photos/id/${Math.round(Math.random()*210,0)}/300/200`;
-      console.log(this.getAttribute('karteiid'));
+      const prospectiveId = this.getAttribute('karteiid').trim()
+      console.log(`prospectiveId = ${prospectiveId}`);
+      if (prospectiveId != "") {
+        console.log("the prospective id, trimmed is unequal to an empty string. yay .. something!");
+
+        var mychaindebugger = function(input) {
+                console.log(input);
+                return(input);
+            };
+        // prep refs to elements in this context?
+        var cardtitle_preselected = this.shadowRoot.querySelector("h5.cardtitle");
+        var cardtext_preselected = this.shadowRoot.querySelector("p.cardtext");
+        
+        window.fetch(`http://localhost:8080/kartei/${prospectiveId}`)
+                .then((response) => response.json())
+                .then((data) => mychaindebugger(data)) // die zeile und die funktion oben kann man weglassen, aber gut fuer debuging methinks.
+                .then((data) => {
+                    console.log(data);
+                    console.log(data.name);
+                    this.shadowRoot.querySelector("h5.card-title").innerHTML = data["name"];
+                    this.shadowRoot.querySelector("p.card-text").innerHTML = data['beschreibung'];
+                    return data;
+                }, (data) => { 
+                  console.log("The promise .. failed."); console.log(data); 
+                  return data; 
+                });
+
+
+      }
+      
   }
 
 }
