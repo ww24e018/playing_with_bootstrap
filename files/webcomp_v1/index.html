@@ -40,19 +40,24 @@
     </div>
     <div class="row">
         <div class="col-12 col-sm-6 col-lg-2">
-
-            <template id="template-for-kartei-component">
-                <div class="card" style="width: 18rem;">
-                    <img src="" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><slot name="kartei-name">NEED NAME</slot></h5>
-                        <p class="card-text"><slot name="kartei-beschreibung">NEED BESCHREIBUNG</slot></p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </template>
-
-
+            <kartei-component karteiid="15">
+                <div slot="kartei-name">Insert Name here</div>
+                <div slot="kartei-beschreibung">Insert Beschreibung here</div>
+            </kartei-component>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
+            <kartei-component karteiid="15">
+                <div slot="kartei-name">Insert Name here</div>
+                <div slot="kartei-beschreibung">Insert Beschreibung here</div>
+            </kartei-component>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
+            <kartei-component karteiid="15">
+                <div slot="kartei-name">Insert Name here</div>
+                <div slot="kartei-beschreibung">Insert Beschreibung here</div>
+            </kartei-component>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
             <kartei-component karteiid="15">
                 <div slot="kartei-name">Insert Name here</div>
                 <div slot="kartei-beschreibung">Insert Beschreibung here</div>
@@ -65,9 +70,12 @@
     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4" id="row_fuer_kartei-bscards">
 
 
-
-        <kartei-component karteiid="53"></kartei-component>
-        <kartei-component karteiid="54"></kartei-component>
+        <div class="col">
+            <kartei-component karteiid="53"></kartei-component>
+        </div>
+        <div class="col">
+            <kartei-component karteiid="54"></kartei-component>
+        </div>
 
 
 
