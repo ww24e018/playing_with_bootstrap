@@ -12,10 +12,10 @@ class KarteiComponent extends HTMLElement {
 	
 	this.attachShadow({mode: 'open'});
 	this.shadowRoot.appendChild(template.content.cloneNode(true));
-	
-	
+	this.shadowRoot.querySelector('')
+
   }
   // Element functionality written in here
 }
 
-customElements.define("kartei-component", KarteiComponent);
+window.customElements.define("kartei-component", KarteiComponent);
