@@ -27,6 +27,7 @@ class KarteiComponent extends HTMLElement {
   connectedCallback() {
       this.shadowRoot.querySelector('img.card-img-top')
           .src = `https://picsum.photos/id/${Math.round(Math.random()*210,0)}/300/200`;
+      console.log(this.getAttribute('karteiid'));
   }
 
 }
