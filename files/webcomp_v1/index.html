@@ -21,6 +21,26 @@
     <script>
     </script>
     <script src="comp_kartei.js" defer></script>
+    <script>
+        window.onload = (event) => {
+            console.log("page is fully loaded");
+
+            var urltofetch = "http://localhost:8080/kartei/all/onlyids";
+
+            var mychaindebugger = function(input) {
+                console.log(input);
+                return(input);
+            }
+
+            window.fetch(urltofetch)
+                .then((response) => response.json())
+                .then((data) => mychaindebugger(data)) // die zeile und die funktion oben kann man weglassen, aber gut fuer debuging methinks.
+                .then((data) => {
+                    return data;
+                });
+
+        }
+    </script>
 
 </head>
 <body>
