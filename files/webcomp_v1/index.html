@@ -20,27 +20,25 @@
 
     <script>
     </script>
-    <script src="comp_kartei.js" defer></script>
+    <script src="comp_box.js" defer></script>
     <script>
         window.onload = (event) => {
             console.log("page is fully loaded");
-
-            var urltofetch = "http://localhost:8080/kartei/all/onlyids";
 
             var mychaindebugger = function(input) {
                 console.log(input);
                 return(input);
             }
 
-            window.fetch(urltofetch)
+            window.fetch("http://localhost:8080/boxes")
                 .then((response) => response.json())
                 .then((data) => mychaindebugger(data)) // die zeile und die funktion oben kann man weglassen, aber gut fuer debuging methinks.
                 .then((data) => {
-                    document.getElementById("row_fuer_kartei-bscards")
+                    document.getElementById("row_for_box_bscards")
                         .innerHTML=
                             data.map((element) => {
                                 return `  <div class="col">
-                                        <kartei-component karteiid="${element}"></kartei-component>
+                                        <box-component boxid="${element.id}"></box-component>
                                     </div>`;
                             }).join("")
                         ;
@@ -67,7 +65,7 @@
 </div>
 
 <div class="container-fluid" id="container_log">
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4" id="row_fuer_kartei-bscards">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4" id="row_for_box_bscards">
 
     </div>
 </div>

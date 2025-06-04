@@ -15,7 +15,7 @@ template.innerHTML = `
 `
 
 
-class KarteiComponent extends HTMLElement {
+class BoxComponent extends HTMLElement {
   constructor() {
     super();
 	  this.attachShadow({mode: 'open'});
@@ -26,7 +26,7 @@ class KarteiComponent extends HTMLElement {
   connectedCallback() {
       this.shadowRoot.querySelector('img.card-img-top')
           .src = `https://picsum.photos/id/${Math.round(Math.random()*210,0)}/300/200`;
-      const prospectiveId = this.getAttribute('karteiid').trim()
+      const prospectiveId = this.getAttribute('boxid').trim()
       if (prospectiveId != "") {
 
         var mychaindebugger = function(input) {
@@ -34,12 +34,12 @@ class KarteiComponent extends HTMLElement {
                 return(input);
             };
         
-        window.fetch(`http://localhost:8080/kartei/${prospectiveId}`)
+        window.fetch(`http://localhost:8080/boxes/${prospectiveId}`)
                 .then((response) => response.json())
                 .then((data) => mychaindebugger(data)) // die zeile und die funktion oben kann man weglassen, aber gut fuer debuging methinks.
                 .then((data) => {
-                    this.shadowRoot.querySelector("h5.card-title").innerHTML = data["name"];
-                    this.shadowRoot.querySelector("p.card-text").innerHTML = data['beschreibung'];
+                    this.shadowRoot.querySelector("h5.card-title").innerHTML = data["title"];
+                    this.shadowRoot.querySelector("p.card-text").innerHTML = data['description'];
                     return data;
                 }, (data) => { 
                   console.log("The promise .. failed."); console.log(data); 
@@ -53,4 +53,4 @@ class KarteiComponent extends HTMLElement {
 
 }
 
-window.customElements.define('kartei-component', KarteiComponent);
+window.customElements.define('box-component', BoxComponent);
