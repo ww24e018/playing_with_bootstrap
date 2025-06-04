@@ -20,7 +20,7 @@
 
     <script>
     </script>
-    <script src="comp_box.js" defer></script>
+    <script src="comp_boxcard.js" defer></script>
     <script>
         window.onload = (event) => {
             console.log("page is fully loaded");
@@ -38,7 +38,7 @@
                         .innerHTML=
                             data.map((element) => {
                                 return `  <div class="col">
-                                        <box-component boxid="${element.id}"></box-component>
+                                        <boxcard-component boxid="${element.id}"></boxcard-component>
                                     </div>`;
                             }).join("")
                         ;

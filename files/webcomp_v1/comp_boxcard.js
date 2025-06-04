@@ -12,16 +12,17 @@ template.innerHTML = `
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-`
+`;
 
 
 class BoxComponent extends HTMLElement {
   constructor() {
-    super();
+      super();
 	  this.attachShadow({mode: 'open'});
+
 	  this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-  }
+  };
 
   connectedCallback() {
       this.shadowRoot.querySelector('img.card-img-top')
@@ -53,4 +54,4 @@ class BoxComponent extends HTMLElement {
 
 }
 
-window.customElements.define('box-component', BoxComponent);
+window.customElements.define('boxcard-component', BoxComponent);
