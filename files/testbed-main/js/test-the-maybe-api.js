@@ -19,8 +19,12 @@ box_for_update.description += " (Updated!)";
 var update_result = await box.updateAsync(8, box_for_update);
 console.log(update_result)*/
 
+console.log("testing box-delete")
 var box_do_delete_later = await box.createAsync({title: "delete me", description: "delete me"});
-console.log(box_do_delete_later);
+//console.log(box_do_delete_later);
 var deleteresult = await box.deleteAsync(box_do_delete_later.id);
-console.log(deleteresult);
+//console.log(deleteresult);
+console.log("might have worked?")
+
+
 
