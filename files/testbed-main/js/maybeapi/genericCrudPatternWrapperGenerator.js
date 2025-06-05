@@ -1,17 +1,18 @@
 // yay for long names
 /*
 
-Naming based on assumption that the json/js-object ist the most common goal.
+Naming based on assumption that the json/js-object ist the most frequent goal.
+It also seems reasonable from a semantic point to make that default.
+
 Therefore e.g. read() returns the .json() *promise*(!)
-You can "await" that promise to get json "directly"
-Or you can do a e.g. a
+You can "await" that promise to get json "directly". Or you can do e.g. a
 read().then(successhandlerref, errorhandlerref)
 to make the promise  do stuff "later".
 
 If you want to chain multiple promise-"thens" then remember to return the promise from the handler in each step.
 
-Use readResponse() if you want the response-promise before the attempted json-interpretation.
-For example if you want to check for http-status codes beforehand.
+Use readResponse() (or the xyResponse() equivalents) if you want the response-promise before
+the attempted json-interpretation. For example if you want to check for http-status codes beforehand.
 
  */
 
