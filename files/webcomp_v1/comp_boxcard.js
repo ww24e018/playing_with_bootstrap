@@ -14,14 +14,11 @@ template.innerHTML = `
 </div>
 `;
 
-
 class BoxComponent extends HTMLElement {
   constructor() {
       super();
 	  this.attachShadow({mode: 'open'});
-
 	  this.shadowRoot.appendChild(template.content.cloneNode(true));
-
   };
 
   connectedCallback() {
@@ -29,15 +26,8 @@ class BoxComponent extends HTMLElement {
           .src = `https://picsum.photos/id/${Math.round(Math.random()*210,0)}/300/200`;
       const prospectiveId = this.getAttribute('boxid').trim()
       if (prospectiveId != "") {
-
-        var mychaindebugger = function(input) {
-                console.log(input);
-                return(input);
-            };
-        
-        window.fetch(`http://localhost:8080/boxes/${prospectiveId}`)
+          window.fetch(`http://localhost:8080/boxes/${prospectiveId}`)
                 .then((response) => response.json())
-                .then((data) => mychaindebugger(data)) // die zeile und die funktion oben kann man weglassen, aber gut fuer debuging methinks.
                 .then((data) => {
                     this.shadowRoot.querySelector("h5.card-title").innerHTML = data["title"];
                     this.shadowRoot.querySelector("p.card-text").innerHTML = data['description'];
@@ -46,12 +36,8 @@ class BoxComponent extends HTMLElement {
                   console.log("The promise .. failed."); console.log(data); 
                   return data; 
                 });
-
-
       }
-      
   }
-
 }
 
 window.customElements.define('boxcard-component', BoxComponent);
