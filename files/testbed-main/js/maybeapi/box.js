@@ -1,4 +1,4 @@
-import {backendUrls as baseurls, backendUrls} from "./backendUrls.js";
+import {backendUrls} from "./backendUrls.js";
 
 // current thinking: it seems easier to read and debug if one only generalizes the error handlers
 let promiseHandler_fail = function(err) { console.error(err); return err; };
@@ -16,7 +16,7 @@ export var box = {
     readAllAsync: function(){ return this.readAll().then( (json) => json, promiseHandler_fail); },
 
     create: function(reqBody) {
-        let request = new Request(baseurls.box, {
+        let request = new Request(`${backendUrls.box}`, {
             method: "POST",
             body: JSON.stringify(reqBody),
             headers: {
