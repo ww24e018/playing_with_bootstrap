@@ -1,4 +1,5 @@
 import { box } from './maybeapi/box.js'
+import { boxComment } from './maybeapi/boxComment.js'
 
 var myboxjson = await box.readAsync(8);
 console.log(myboxjson)
@@ -27,4 +28,5 @@ var deleteresult = await box.deleteAsync(box_do_delete_later.id);
 console.log("might have worked?")
 
 
+console.log(await boxComment.readAllAsync());
 
