@@ -12,8 +12,15 @@ console.log(myboxjsonAll.length);
 });
 console.log(as_postres);*/
 
-var box_for_update = await box.readAsync(8);
+// works
+/*var box_for_update = await box.readAsync(8);
 box_for_update.title += " (Updated!)";
 box_for_update.description += " (Updated!)";
 var update_result = await box.updateAsync(8, box_for_update);
-console.log(update_result)
+console.log(update_result)*/
+
+var box_do_delete_later = await box.createAsync({title: "delete me", description: "delete me"});
+console.log(box_do_delete_later);
+var deleteresult = await box.deleteAsync(box_do_delete_later.id);
+console.log(deleteresult);
+
