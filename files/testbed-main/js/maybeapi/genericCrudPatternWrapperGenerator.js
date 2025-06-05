@@ -8,6 +8,7 @@ export var gimmeAccessFunctionObjectWithURLBase = function(urlBase) {
             return fetch(`${urlBase}/${id}`).then( (res) => res.json(), promiseHandler_fail)
         },
         readAsync: function(id){ return this.read(id).then( (json) => json, promiseHandler_fail); },
+        //readAsyncAwait: async function(id) { var res = await this.readAsync(id); return res; },
 
         readAll: function() {
             return fetch(`${urlBase}`).then((res) => res.json(), promiseHandler_fail)

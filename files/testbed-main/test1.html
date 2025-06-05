@@ -10,6 +10,12 @@
           crossorigin="anonymous">
 
     <script type="module" src="js/import-all.js" defer></script>
+    <script type="module">
+        /* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules */
+        /* JavaScript module code here */
+        import { api } from './js/maybeapi/backEndApiAccessorObjects.js'
+        window.api = api;
+    </script>
 </head>
 <body>
 
