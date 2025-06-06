@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+  <script type="application/javascript">
+    window.onload = function(){
+      console.log("onloadhandler")
+    };
+    window.addEventListener("load", (event) => {
+      console.log("page is fully loaded");
+    });
+  </script>
+  <script defer>
+    console.log("test");
+    window.onload = function(){
+      console.log("onloadhandler in defer")
+    };
+    window.onload = function(){
+      console.log("onloadhandler in defer2")
+    };
+    let z = prompt("frage");
+  </script>
+</head>
+<body>
+
+</body>
+</html>
