@@ -45,10 +45,27 @@
         window.fake.cardProgress = {
             "stage": 1,
         }
+        window.fake.subscription = {
+            //"id": 11111,
+        }
+        window.fake.box = {
+            "title": "faketitlestring",
+            "description": "fakedescstring",
+            "public": false
+        }
+        window.fake.comment = {
+            "text": "fakecomment string without box",
+        }
 
-        // api.users.create(fake.user);
-        // api.cards.create(fake.card);
-        // api.cardProgresses.create(fake.cardProgress);
+        var fb = await api.boxes.create(fake.box);
+        window.fake.comment.boxId = fb.id;
+        api.comments.create(fake.comment);
+        api.users.create(fake.user);
+        api.cards.create(fake.card);
+        api.cardProgresses.create(fake.cardProgress);
+        api.subscriptions.create(fake.subscription);
+
+        
 
     </script>
 </head>
@@ -58,9 +75,7 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 
-
-<boxcard-component boxid="4"></boxcard-component>
-<boxcomment-component bc-id="16"></boxcomment-component>
+<pre id="outputdiv"></pre>
 
 </body>
 </html>
