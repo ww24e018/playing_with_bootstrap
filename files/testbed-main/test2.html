@@ -23,7 +23,8 @@
                 value.readAll().then( (data) => { window.ep[key] = data; return data;} )
             }
         }
-        fetch_eps();
+        window.fetch_eps = fetch_eps;
+        window.fetch_eps();
 
         window.fake = {};
         window.fake.user = {
@@ -37,6 +38,13 @@
             "country": "string-country",
             "admin": false
         }
+        window.fake.card = {
+            "question": "fake-question",
+            "answer": "fake-answer",
+        }
+
+        // api.users.create(fake.user);
+        // api.cards.create(fake.card);
 
     </script>
 </head>
