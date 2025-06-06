@@ -15,6 +15,15 @@
         /* JavaScript module code here */
         import { api } from './js/exposeSimpleRestCrudToJSBuilder/backEndApiAccessorObjects.js'
         window.api = api;
+
+        window.ep = {};
+        var fetch_eps = function() {
+            for (const [key, value] of Object.entries(api)) {
+                console.log(`${key}: ${value}`);
+                value.readAll().then( (data) => { window.ep[key] = data; return data;} )
+            }
+        }
+        fetch_eps();
     </script>
 </head>
 <body>
