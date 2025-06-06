@@ -18,4 +18,8 @@ export const backendUrls = {
     boxes: backendBaseURL+"/boxes",
     comments: backendBaseURL+"/boxcomments",
     users: backendBaseURL+"/users",
+    cards: backendBaseURL+"/cards",
+    cardProgresses: backendBaseURL+"/cardProgresses",
+    subscriptions: backendBaseURL+"/subscriptions",
+
 }
