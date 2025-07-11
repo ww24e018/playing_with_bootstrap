@@ -14,7 +14,9 @@ function* iterateParamSpace(paramspace) {
 
         for (const value of values) {
             currentCombination[currentKey] = value;
+            console.log("methinks the next line will generate a generator. stop.")
             yield* generateCombinations(currentCombination, depth + 1);
+            console.log("methinks here the ref might be dropped.")
         }
     }
 
